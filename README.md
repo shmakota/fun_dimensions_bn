@@ -1,5 +1,7 @@
 # Fun Dimensions
-An example dimension mod that adds megacity, waterworld, and limbo dimensions to BN. They can all be accessed through various methods in the game world or by the debug pocket watches. Note that these are experimental and may be changed, added to mainline, or completely removed at any point. I will warn players before I do any broad changes, however. If you'd like to have it spoiled:
+An example dimension mod that adds megacity, waterworld, and limbo dimensions to BN. They can all be accessed through various methods in the game world or by the debug pocket watches if you'd like to "start" in one of these dimensions.
+
+Note that these are experimental and may be changed, added to mainline, or completely removed at any point. I will warn players before I do any broad changes, however.
 
 <img width="1852" height="1006" alt="image" src="https://github.com/user-attachments/assets/f75aa8f1-3439-42a6-abe1-8455965baa3a" />
 <details> 
