@@ -1,0 +1,12 @@
+[
+  {
+    "type": "construction_group",
+    "id": "build_limbo_rift",
+    "name": "Build Limbo Rift"
+  },
+  {
+    "type": "construction_group",
+    "id": "dismantle_limbo_rift",
+    "name": "Dismantle Limbo Rift"
+  }
+]

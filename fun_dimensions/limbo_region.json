@@ -1,0 +1,52 @@
+[
+  {
+    "type": "terrain",
+    "id": "t_limbo",
+    "name": "limbo",
+    "description": "An empty, featureless surface stretching into the distance.",
+    "looks_like": "t_null",
+    "symbol": ".",
+    "color": "dark_gray",
+    "move_cost": 2,
+    "flags": [ "TRANSPARENT", "FLAT" ]
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "limbo",
+    "name": "limbo",
+    "sym": ".",
+    "color": "dark_gray",
+    "see_cost": 1,
+    "mondensity": 0,
+    "flags": [ "NO_ROTATE" ],
+    "mapgen": [
+      {
+        "weight": 1000,
+        "method": "json",
+        "object": {
+          "fill_ter": "t_limbo",
+          "place_nested": [ { "chunks": [ [ "null", 511 ], [ "limbo_return_portal", 1 ] ], "x": 0, "y": 0 } ]
+        }
+      }
+    ]
+  },
+  {
+    "type": "region_settings",
+    "id": "limbo",
+    "default_oter": "limbo",
+    "river_scale": 0.0,
+    "default_groundcover": [ [ "t_limbo", 1 ] ],
+    "field_coverage": { "percent_coverage": 0.0, "default_ter": "t_limbo", "other": {  }, "boost_chance": 0.0 },
+    "weather": {
+      "spring_temp": "20 C",
+      "summer_temp": "20 C",
+      "autumn_temp": "20 C",
+      "winter_temp": "20 C",
+      "base_humidity": 50.0,
+      "base_pressure": 1015.0,
+      "base_wind": 0.0,
+      "weather_types": [ "clear" ]
+    },
+    "effects": [  ]
+  }
+]

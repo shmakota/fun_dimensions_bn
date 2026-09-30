@@ -1,0 +1,334 @@
+[
+  {
+    "type": "region_settings",
+    "default_oter": "field",
+    "default_groundcover": [ [ "t_region_groundcover", 1 ] ],
+    "region_terrain_and_furniture": {
+      "terrain": {
+        "t_region_groundcover": { "t_grass": 12, "t_grass_dead": 2, "t_dirt": 1 },
+        "t_region_groundcover_urban": { "t_grass": 20, "t_grass_dead": 3 },
+        "t_region_groundcover_forest": { "t_grass_long": 10, "t_grass_tall": 1, "t_moss": 2, "t_grass_dead": 7 },
+        "t_region_groundcover_swamp": { "t_grass_long": 100, "t_grass_tall": 10, "t_moss": 60, "t_dirt": 70, "t_bog_iron": 1 },
+        "t_region_groundcover_barren": { "t_dirt": 30, "t_grass_dead": 2, "t_railroad_rubble": 1 },
+        "t_region_grass": { "t_grass": 1 },
+        "t_region_soil": { "t_dirt": 1 },
+        "t_region_shrub": {
+          "t_underbrush": 30,
+          "t_shrub": 45,
+          "t_fern": 5,
+          "t_shrub_blueberry": 2,
+          "t_shrub_strawberry": 2,
+          "t_shrub_blackberry": 2,
+          "t_shrub_raspberry": 2,
+          "t_shrub_huckleberry": 2,
+          "t_shrub_grape": 1,
+          "t_shrub_rose": 2,
+          "t_shrub_hydrangea": 2,
+          "t_shrub_lilac": 2,
+          "t_shrub_peanut": 1
+        },
+        "t_region_shrub_fruit": {
+          "t_shrub_blueberry": 6,
+          "t_shrub_strawberry": 6,
+          "t_shrub_raspberry": 4,
+          "t_shrub_grape": 4,
+          "t_shrub_blackberry": 2,
+          "t_shrub_huckleberry": 2,
+          "t_shrub_peanut": 1,
+          "t_shrub": 10
+        },
+        "t_region_shrub_decorative": { "t_shrub": 3, "t_fern": 1, "t_shrub_rose": 2, "t_shrub_hydrangea": 2, "t_shrub_lilac": 2 },
+        "t_region_tree": {
+          "t_tree_elm": 64,
+          "t_tree_cottonwood": 32,
+          "t_tree_young": 64,
+          "t_tree_birch": 16,
+          "t_tree": 12,
+          "t_tree_pine": 32,
+          "t_tree_maple": 32,
+          "t_tree_willow": 32,
+          "t_tree_hickory": 8,
+          "t_tree_walnut": 4,
+          "t_tree_chestnut": 4,
+          "t_tree_hazelnut": 2,
+          "t_tree_beech": 2,
+          "t_tree_blackjack": 8,
+          "t_tree_coffee": 2,
+          "t_tree_apple": 2,
+          "t_tree_apricot": 2,
+          "t_tree_cherry": 2,
+          "t_tree_juniper": 2,
+          "t_tree_peach": 2,
+          "t_tree_pear": 2,
+          "t_tree_plum": 2,
+          "t_tree_elderberry": 2,
+          "t_tree_mulberry": 2,
+          "t_tree_deadpine": 32,
+          "t_tree_hickory_dead": 32,
+          "t_tree_dead": 64,
+          "t_tree_cacao": 1,
+          "t_tree_coca": 1
+        },
+        "t_region_tree_shade": {
+          "t_tree_elm": 64,
+          "t_tree_cottonwood": 32,
+          "t_tree_young": 32,
+          "t_tree": 12,
+          "t_tree_birch": 16,
+          "t_tree_maple": 32,
+          "t_tree_willow": 32,
+          "t_tree_hickory": 16,
+          "t_tree_chestnut": 8,
+          "t_tree_blackjack": 8,
+          "t_tree_coffee": 2,
+          "t_tree_elderberry": 2,
+          "t_tree_mulberry": 2,
+          "t_tree_dead": 24,
+          "t_tree_cacao": 1
+        },
+        "t_region_tree_fruit": {
+          "t_tree_young": 4,
+          "t_tree_apple": 2,
+          "t_tree_apricot": 2,
+          "t_tree_cherry": 2,
+          "t_tree_peach": 2,
+          "t_tree_pear": 2,
+          "t_tree_plum": 2,
+          "t_tree_elderberry": 2,
+          "t_tree_mulberry": 2,
+          "t_tree_dead": 4,
+          "t_tree_cacao": 1
+        },
+        "t_region_tree_nut": {
+          "t_tree_young": 4,
+          "t_tree": 4,
+          "t_tree_hickory": 16,
+          "t_tree_beech": 2,
+          "t_tree_walnut": 4,
+          "t_tree_chestnut": 4,
+          "t_tree_hazelnut": 1,
+          "t_tree_coffee": 1,
+          "t_tree_hickory_dead": 8,
+          "t_tree_dead": 8
+        },
+        "t_region_tree_evergreen": { "t_tree_pine": 32, "t_tree_juniper": 16, "t_tree_deadpine": 12 }
+      },
+      "furniture": {
+        "f_region_flower": {
+          "f_black_eyed_susan": 1,
+          "f_lily": 1,
+          "f_flower_tulip": 1,
+          "f_flower_spurge": 1,
+          "f_chamomile": 1,
+          "f_dandelion": 1,
+          "f_burdock": 1,
+          "f_datura": 1,
+          "f_dahlia": 1,
+          "f_chicory": 1,
+          "f_bluebell": 1,
+          "f_sunflower": 1
+        },
+        "f_region_flower_decorative": {
+          "f_lily": 4,
+          "f_flower_tulip": 4,
+          "f_black_eyed_susan": 3,
+          "f_dahlia": 2,
+          "f_bluebell": 2,
+          "f_flower_spurge": 1,
+          "f_chicory": 1,
+          "f_sunflower": 1
+        },
+        "f_region_weed": {
+          "f_dandelion": 6,
+          "f_burdock": 4,
+          "f_flower_spurge": 4,
+          "f_chamomile": 4,
+          "f_datura": 3,
+          "f_bluebell": 2,
+          "f_dahlia": 1,
+          "f_black_eyed_susan": 1,
+          "f_lily": 1,
+          "f_flower_tulip": 1,
+          "f_mutpoppy": 1,
+          "f_sunflower": 1,
+          "f_mustard": 1
+        },
+        "f_region_water_plant": { "f_cattails": 6, "f_lilypad": 3, "f_lotus": 3 }
+      }
+    },
+    "weather": {
+      "spring_temp": 8,
+      "summer_temp": 16,
+      "autumn_temp": 7,
+      "winter_temp": -14,
+      "base_humidity": 70,
+      "summer_humidity_manual_mod": -17,
+      "winter_humidity_manual_mod": 17,
+      "base_pressure": 1016,
+      "base_acid": 0,
+      "base_wind": 10,
+      "base_wind_distrib_peaks": 100,
+      "base_wind_season_variation": 30,
+      "weather_types": [
+        "clear",
+        "sunny",
+        "cloudy",
+        "light_drizzle",
+        "drizzle",
+        "rain",
+        "heavy_rain",
+        "thunder",
+        "lightning",
+        "acid_drizzle",
+        "acid_rain",
+        "light_flurries",
+        "flurries",
+        "snowing",
+        "snowstorm"
+      ]
+    },
+    "id": "megacity",
+    "river_scale": 0.0,
+    "field_coverage": { "percent_coverage": 0.0, "default_ter": "t_grass", "other": {  }, "boost_chance": 0.0 },
+    "overmap_forest_settings": {
+      "noise_threshold_forest": 0.0,
+      "noise_threshold_forest_thick": 0.0,
+      "noise_threshold_swamp_adjacent_water": 0.3,
+      "noise_threshold_swamp_isolated": 0.6,
+      "river_floodplain_buffer_distance_min": 3,
+      "river_floodplain_buffer_distance_max": 15
+    },
+    "overmap_lake_settings": {
+      "noise_threshold_lake": 0.0,
+      "lake_size_min": 20,
+      "lake_depth": -5,
+      "shore_extendable_overmap_terrain": [ "forest", "forest_thick", "forest_water", "field" ],
+      "shore_extendable_overmap_terrain_aliases": [
+        { "om_terrain": "island_forest", "om_terrain_match_type": "TYPE", "alias": "forest" },
+        { "om_terrain": "island_forest_thick", "om_terrain_match_type": "TYPE", "alias": "forest_thick" },
+        { "om_terrain": "island_forest_water", "om_terrain_match_type": "TYPE", "alias": "forest_water" },
+        { "om_terrain": "island_field", "om_terrain_match_type": "TYPE", "alias": "field" }
+      ]
+    },
+    "city": {
+      "city_size": 16,
+      "city_spacing": 0,
+      "shop_radius": 50,
+      "shop_sigma": 20,
+      "apartment_radius": 100,
+      "apartment_sigma": 0,
+      "park_radius": 5,
+      "park_sigma": 10,
+      "houses": {
+        "urban_13_dense_house_apt_house": 300,
+        "urban_29_dense_row": 100,
+        "urban_30_dense_subway": 100,
+        "emptyresidentiallot": 20,
+        "house_vacant": 20,
+        "house_vacant2": 20,
+        "apartments_con_new": 500,
+        "apartments_mod_new": 500,
+        "school": 15,
+        "motel_city": 10,
+        "fishing_pond_city": 10,
+        "trailerpark_city": 15
+      },
+      "urban_houses": {
+        "urban_13_dense_house_apt_house": 300,
+        "urban_29_dense_row": 100,
+        "urban_30_dense_subway": 100,
+        "emptyresidentiallot": 20,
+        "house_vacant": 20,
+        "house_vacant2": 20,
+        "apartments_con_new": 500,
+        "apartments_mod_new": 500,
+        "school": 15,
+        "motel_city": 10,
+        "fishing_pond_city": 10,
+        "trailerpark_city": 15
+      },
+      "shops": {
+        "bus_station": 200,
+        "abandoned_textile_mill": 20,
+        "city_block_2": 2000,
+        "urban_14_dense_house_mart_food": 400,
+        "urban_23_dense_office_theater": 400,
+        "urban_24_dense_bank_house": 200,
+        "urban_25_dense_diner_apt": 400,
+        "urban_26_dense_club": 200,
+        "urban_27_dense_barber_apt": 400,
+        "urban_28_dense_cafe_laundry": 400,
+        "urban_31_police_station": 150,
+        "urban_32_fire_station": 150
+      },
+      "urban_shops": {
+        "bus_station": 200,
+        "abandoned_textile_mill": 20,
+        "city_block_2": 2000,
+        "urban_14_dense_house_mart_food": 400,
+        "urban_23_dense_office_theater": 400,
+        "urban_24_dense_bank_house": 200,
+        "urban_25_dense_diner_apt": 400,
+        "urban_26_dense_club": 200,
+        "urban_27_dense_barber_apt": 400,
+        "urban_28_dense_cafe_laundry": 400,
+        "urban_31_police_station": 150,
+        "urban_32_fire_station": 150
+      },
+      "parks": {
+        "park": 400,
+        "pool": 20,
+        "pool_1": 20,
+        "pool_2": 20,
+        "pool_3": 20,
+        "pool_4": 20,
+        "pool_5": 20,
+        "pool_6": 20,
+        "skate_park_ramp": 50,
+        "skate_park": 50,
+        "vending_park": 70,
+        "small_wooded_trail": 300
+      },
+      "finales": {
+        "s_electronics_2": 200,
+        "s_gun_2": 200,
+        "megastore": 200,
+        "mall": 1000,
+        "home_improvement_superstore_new": 1000,
+        "town_hall": 200,
+        "police_1": 200,
+        "s_gun_1": 200,
+        "fire_station": 100,
+        "hospital": 100,
+        "house_prepper": 50,
+        "office_tower_hiddenlab": 50
+      }
+    },
+    "effects": [  ]
+  },
+  {
+    "type": "region_overlay",
+    "regions": [ "default" ],
+    "region_terrain_and_furniture": {
+      "furniture": {
+        "f_dimension_maintenance_manhole": { "f_maintenance_to_megacity": 1 },
+        "f_dimension_waterworld_portal": { "f_waterworld_portal_enter": 1 }
+      }
+    }
+  },
+  {
+    "type": "region_overlay",
+    "regions": [ "megacity" ],
+    "region_terrain_and_furniture": {
+      "furniture": {
+        "f_dimension_maintenance_manhole": { "f_maintenance_to_default": 1 },
+        "f_dimension_waterworld_portal": { "f_waterworld_portal_enter": 1 }
+      }
+    }
+  },
+  {
+    "type": "region_overlay",
+    "regions": [ "megacity" ],
+    "overmap_feature_flag_settings": { "blacklist": [ "DIMENSION_TESTING_EXCLUDED" ] }
+  }
+]

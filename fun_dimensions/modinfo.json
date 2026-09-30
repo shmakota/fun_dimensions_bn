@@ -1,0 +1,12 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "fun_dimensions",
+    "name": "<color_yellow>Fun Dimensions</color>",
+    "description": "(NOTE: DIMENSIONS ARE UNSTABLE! THIS IS A TEST MOD) Adds limbo, megacity, and waterworld dimensions with proper in-universe ways to access them. Note that some of these methods or dimensions may be replaced in the future with mainline content.",
+    "category": "content",
+    "authors": [ "Kota" ],
+    "dependencies": [ "bn" ],
+    "lua_api_version": 2
+  }
+]

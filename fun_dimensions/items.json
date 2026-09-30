@@ -1,0 +1,139 @@
+[
+  {
+    "type": "GENERIC",
+    "id": "limbo_rift_schematic",
+    "symbol": ",",
+    "color": "light_cyan",
+    "name": { "str": "limbo rift schematic" },
+    "category": "scrap_electronics",
+    "description": "A set of technical notes recovered by dismantling a Limbo rift.  They are needed to construct another one.",
+    "price": "2000 USD",
+    "material": [ "paper", "plastic" ],
+    "weight": "50 g",
+    "volume": "250 ml"
+  },
+  {
+    "id": "debug_test_dimension_watch",
+    "type": "TOOL",
+    "copy-from": "debug_testing_dimension_travel",
+    "name": { "str": "dimensional pocket watch (limbo)" },
+    "description": "A debug pocket watch that opens an empty test dimension of limbo.  Transform it after traveling to switch between the test dimension and New England.",
+    "use_action": [
+      {
+        "type": "dimension_travel",
+        "destination": "test_dimension",
+        "travel_radius": 5,
+        "need_charges": 0,
+        "fail_message": "The watch vibrates but nothing happens.",
+        "success_message": "You step into limbo."
+      },
+      { "type": "transform", "target": "debug_test_dimension_watch_return", "msg": "The watch reconfigures itself." }
+    ]
+  },
+  {
+    "id": "debug_test_dimension_watch_return",
+    "type": "TOOL",
+    "copy-from": "debug_test_dimension_watch",
+    "name": { "str": "dimensional pocket watch (limbo return)" },
+    "description": "A debug pocket watch configured to return to New England.  Transform it after returning to travel to the test dimension again.",
+    "use_action": [
+      {
+        "type": "dimension_travel",
+        "destination": "default",
+        "travel_radius": 5,
+        "need_charges": 0,
+        "fail_message": "The watch vibrates but nothing happens.",
+        "success_message": "You feel reality snap back into place."
+      },
+      { "type": "transform", "target": "debug_test_dimension_watch", "msg": "The watch reconfigures itself." }
+    ]
+  },
+  {
+    "type": "TOOL",
+    "id": "debug_megacity_watch",
+    "copy-from": "debug_testing_dimension_travel",
+    "name": { "str": "dimensional pocket watch (megacity)" },
+    "description": "A debug pocket watch configured to travel to the megacity dimension.  Transform it after traveling to return to New England.",
+    "use_action": [
+      {
+        "type": "dimension_travel",
+        "destination": "megacity",
+        "travel_radius": 5,
+        "need_charges": 0,
+        "fail_message": "The watch vibrates but nothing happens.",
+        "success_message": "Reality folds into an endless maze of streets and buildings."
+      },
+      { "type": "transform", "target": "debug_megacity_watch_return", "msg": "The watch reconfigures itself." }
+    ]
+  },
+  {
+    "type": "TOOL",
+    "id": "debug_megacity_watch_return",
+    "copy-from": "debug_testing_dimension_travel",
+    "name": { "str": "dimensional pocket watch (megacity return)" },
+    "description": "A debug pocket watch configured to return to New England.  Transform it after returning to travel to the megacity again.",
+    "use_action": [
+      {
+        "type": "dimension_travel",
+        "destination": "default",
+        "travel_radius": 5,
+        "need_charges": 0,
+        "fail_message": "The watch vibrates but nothing happens.",
+        "success_message": "You feel reality snap back into place."
+      },
+      { "type": "transform", "target": "debug_megacity_watch", "msg": "The watch reconfigures itself." }
+    ]
+  },
+  {
+    "type": "TOOL",
+    "id": "debug_waterworld_watch",
+    "copy-from": "debug_testing_dimension_travel",
+    "name": { "str": "dimensional pocket watch (waterworld)" },
+    "description": "A debug pocket watch that transports you to Waterworld.  Transform it after traveling to return to New England.",
+    "use_action": [
+      {
+        "type": "dimension_travel",
+        "destination": "waterworld_islands",
+        "travel_radius": 5,
+        "need_charges": 0,
+        "fail_message": "The watch vibrates but nothing happens.",
+        "success_message": "You hear waves breaking on a distant shore."
+      },
+      { "type": "transform", "target": "debug_waterworld_watch_return", "msg": "The watch reconfigures itself." }
+    ]
+  },
+  {
+    "type": "TOOL",
+    "id": "debug_waterworld_watch_return",
+    "copy-from": "debug_testing_dimension_travel_return",
+    "name": { "str": "dimensional pocket watch (waterworld return)" },
+    "description": "A debug pocket watch configured to return to New England.  Transform it after returning to visit Waterworld again.",
+    "use_action": [
+      {
+        "type": "dimension_travel",
+        "destination": "default",
+        "travel_radius": 5,
+        "need_charges": 0,
+        "fail_message": "The watch vibrates but nothing happens.",
+        "success_message": "You feel reality snap back into place."
+      },
+      { "type": "transform", "target": "debug_waterworld_watch", "msg": "The watch reconfigures itself." }
+    ]
+  },
+  {
+    "type": "TOOL",
+    "id": "dimension_maintenance_waterworld_islands",
+    "copy-from": "debug_waterworld_watch",
+    "name": { "str": "waterworld passage" },
+    "description": "An internal item used to cross into Waterworld.",
+    "use_action": [
+      {
+        "type": "dimension_travel",
+        "destination": "waterworld_islands",
+        "travel_radius": 5,
+        "need_charges": 0,
+        "success_message": "You hear waves breaking on a distant shore."
+      }
+    ]
+  }
+]

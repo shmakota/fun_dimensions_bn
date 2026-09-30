@@ -1,0 +1,170 @@
+[
+  {
+    "type": "mapgen",
+    "method": "json",
+    "om_terrain": [ "urban_subway" ],
+    "weight": 250,
+    "object": {
+      "fill_ter": "t_floor",
+      "rows": [
+        "rrrrXrrrX322223XrrrXrrrr",
+        "rrr-x---x3^22^3x---x-rrr",
+        "rrrrXrrrX23))32XrrrXrrrr",
+        "rrrrXrrrX32))23XrrrXrrrr",
+        "rrr-x---x32))23x---x-rrr",
+        "rrrrXrrrX2^22^2XrrrXrrrr",
+        "rrrrXrrrX32))23XrrrXrrrr",
+        "rrr-x---x32))23x---x-rrr",
+        "####XrrrX23))32XrrrXrrrr",
+        "#..#XrrrX3^22^3XrrrXrrrr",
+        "#..#x---x232232x---x-rrr",
+        "#M.DXrrrX32<<23XrrrXrrrr",
+        "#..#XrrrX32<<23XrrrXrrrr",
+        "#L.#x---x232232x---x-rrr",
+        "#..#XrrrX3^22^3XrrrXrrrr",
+        "####XrrrX23))32XrrrXrrrr",
+        "rrr-x---x32))23x---x-rrr",
+        "rrrrXrrrX32))23XrrrXrrrr",
+        "rrrrXrrrX2^22^2XrrrXrrrr",
+        "rrr-x---x32))23x---x-rrr",
+        "rrrrXrrrX32))23XrrrXrrrr",
+        "rrrrXrrrX23))32XrrrXrrrr",
+        "rrr-x---x3^22^3x---x-rrr",
+        "rrrrXrrrX322223XrrrXrrrr"
+      ],
+      "terrain": {
+        ")": "t_concrete",
+        "2": "t_concrete",
+        "3": "t_concrete_y",
+        "<": "t_stairs_up",
+        "^": "t_column",
+        "r": "t_railroad_rubble",
+        "-": "t_railroad_tie_h",
+        "X": "t_railroad_track",
+        "x": "t_railroad_track_on_tie",
+        "W": "t_buffer_stop",
+        "#": "t_wall",
+        "D": "t_door_metal_c",
+        ".": "t_floor",
+        "M": "t_floor",
+        "L": "t_floor"
+      },
+      "furniture": { ")": "f_bench", "M": "f_dimension_maintenance_manhole", "L": "f_locker" },
+      "items": { "'": { "item": "subway", "chance": 1 }, "K": { "item": "allclothes", "chance": 70 } },
+      "place_signs": [
+        {
+          "x": 2,
+          "y": 9,
+          "signage": "MUNICIPAL TRANSIT - MAINTENANCE ACCESS. Report discrepancies in station names before returning to service."
+        }
+      ]
+    },
+    "//": "Maintenance annex variant. Keep both tracks and the central stairs unobstructed."
+  },
+  {
+    "type": "furniture",
+    "id": "f_dimension_maintenance_manhole",
+    "name": "maintenance manhole",
+    "description": "A heavy maintenance cover.  There is no sound beneath it.",
+    "looks_like": "t_manhole_cover",
+    "symbol": "0",
+    "color": "dark_gray",
+    "move_cost_mod": 0,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT" ],
+    "examine_action": "lua:DIMENSION_MAINTENANCE"
+  },
+  {
+    "type": "furniture",
+    "id": "f_maintenance_to_megacity",
+    "name": "maintenance manhole",
+    "description": "A heavy maintenance cover marked with an unfamiliar transit logo.  Traffic rumbles below, much farther away than it should be.",
+    "looks_like": "t_manhole_cover",
+    "symbol": "0",
+    "color": "dark_gray",
+    "move_cost_mod": 0,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT" ],
+    "examine_action": "lua:DIMENSION_MAINTENANCE"
+  },
+  {
+    "type": "furniture",
+    "id": "f_maintenance_to_default",
+    "name": "maintenance manhole",
+    "description": "A heavy maintenance cover with a familiar transit logo.  A faint draft carries the smell of rain and leaves.",
+    "looks_like": "t_manhole_cover",
+    "symbol": "0",
+    "color": "dark_gray",
+    "move_cost_mod": 0,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT" ],
+    "examine_action": "lua:DIMENSION_MAINTENANCE"
+  },
+  {
+    "type": "TOOL",
+    "id": "dimension_maintenance_default",
+    "copy-from": "debug_megacity_watch",
+    "name": { "str": "maintenance passage" },
+    "description": "An internal item used by maintenance manholes to cross dimensions.",
+    "use_action": [
+      {
+        "type": "dimension_travel",
+        "destination": "default",
+        "travel_radius": 5,
+        "need_charges": 0,
+        "success_message": "You descend a ladder that seems longer than the tunnel above it."
+      }
+    ]
+  },
+  {
+    "type": "TOOL",
+    "id": "dimension_maintenance_megacity",
+    "copy-from": "debug_megacity_watch",
+    "name": { "str": "maintenance passage" },
+    "description": "An internal item used by maintenance manholes to cross dimensions.",
+    "use_action": [
+      {
+        "type": "dimension_travel",
+        "destination": "megacity",
+        "travel_radius": 5,
+        "need_charges": 0,
+        "success_message": "You descend a ladder that seems longer than the tunnel above it."
+      }
+    ]
+  },
+  {
+    "type": "TOOL",
+    "id": "dimension_maintenance_test_dimension",
+    "copy-from": "debug_test_dimension_watch",
+    "name": { "str": "limbo passage" },
+    "description": "An internal item used by Limbo rifts to cross dimensions.",
+    "use_action": [
+      {
+        "type": "dimension_travel",
+        "destination": "test_dimension",
+        "travel_radius": 5,
+        "need_charges": 0,
+        "success_message": "You pass through the limbo rift."
+      }
+    ]
+  },
+  {
+    "type": "furniture",
+    "id": "f_limbo_overworld_portal",
+    "name": "dimensional fracture",
+    "description": "A stable rift hangs in the empty air.  Examine it to cross between Limbo and the overworld; it forms a matching rift on the other side.",
+    "looks_like": "t_dimensional_portal_linked",
+    "symbol": "O",
+    "color": "light_cyan",
+    "move_cost_mod": -1,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT" ],
+    "examine_action": "lua:DIMENSION_LIMBO_RIFT"
+  },
+  {
+    "type": "mapgen",
+    "method": "json",
+    "nested_mapgen_id": "limbo_return_portal",
+    "object": { "mapgensize": [ 24, 24 ], "place_furniture": [ { "furn": "f_limbo_overworld_portal", "x": 12, "y": 12 } ] }
+  }
+]

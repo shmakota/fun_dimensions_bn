@@ -1,0 +1,117 @@
+[
+  {
+    "type": "furniture",
+    "id": "f_limbo_rift",
+    "name": "limbo rift",
+    "description": "A vertical tear in the air.  Examine it to cross between the overworld and Limbo; a matching rift stabilizes at the same location on the other side.",
+    "looks_like": "t_dimensional_portal",
+    "symbol": "O",
+    "color": "light_cyan",
+    "move_cost_mod": -1,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT" ],
+    "examine_action": "lua:DIMENSION_LIMBO_RIFT"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "limbo_rift",
+    "name": "limbo rift",
+    "sym": "O",
+    "color": "light_cyan",
+    "see_cost": 2,
+    "mondensity": 0,
+    "flags": [ "NO_ROTATE" ]
+  },
+  {
+    "type": "overmap_special",
+    "id": "limbo_rift",
+    "overmaps": [ { "point": [ 0, 0, 0 ], "overmap": "limbo_rift" } ],
+    "locations": [ "wilderness" ],
+    "city_distance": [ 3, -1 ],
+    "occurrences": [ 0, 1 ]
+  },
+  {
+    "type": "mapgen",
+    "om_terrain": "limbo_rift",
+    "method": "json",
+    "object": {
+      "fill_ter": "t_grass",
+      "set": [
+        { "square": "terrain", "id": "t_dirt", "x": 8, "y": 8, "x2": 16, "y2": 16 },
+        { "square": "terrain", "id": "t_rock_floor", "x": 10, "y": 10, "x2": 14, "y2": 14 },
+        { "point": "furniture", "id": "f_limbo_rift", "x": 12, "y": 12 }
+      ],
+      "place_signs": [
+        {
+          "x": 11,
+          "y": 15,
+          "signage": "DIMENSION TESTING: Examine the rift to enter Limbo. A paired portal will form at your arrival point and return you here."
+        }
+      ]
+    }
+  },
+  {
+    "type": "furniture",
+    "id": "f_dimension_waterworld_portal",
+    "name": "underwater portal",
+    "description": "A shimmering vertical opening stands on the lake bed, its light wavering through the water.  Examine it to pass between worlds.",
+    "looks_like": "t_dimensional_portal",
+    "symbol": "O",
+    "color": "light_cyan",
+    "move_cost_mod": -1,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT" ],
+    "examine_action": "lua:DIMENSION_WATERWORLD_ENTER"
+  },
+  {
+    "type": "furniture",
+    "id": "f_waterworld_portal_enter",
+    "copy-from": "f_dimension_waterworld_portal",
+    "name": "underwater portal",
+    "description": "A shimmering vertical opening stands on the lake bed, its light wavering through the water.  Examine it to pass between worlds.",
+    "looks_like": "t_dimensional_portal",
+    "symbol": "O",
+    "color": "light_cyan",
+    "move_cost_mod": -1,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT" ],
+    "examine_action": "lua:DIMENSION_WATERWORLD_ENTER"
+  },
+  {
+    "type": "furniture",
+    "id": "f_waterworld_portal_return",
+    "copy-from": "f_dimension_waterworld_portal",
+    "name": "underwater portal",
+    "description": "A shimmering vertical opening stands on the lake bed, its light wavering through the water.  Examine it to pass between worlds.",
+    "looks_like": "t_dimensional_portal",
+    "symbol": "O",
+    "color": "light_cyan",
+    "move_cost_mod": -1,
+    "required_str": -1,
+    "flags": [ "TRANSPARENT" ],
+    "examine_action": "lua:DIMENSION_WATERWORLD_PORTAL_RETURN"
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "dimension_waterworld_portal_bed",
+    "name": "lake bed (submerged portal)",
+    "sym": "O",
+    "color": "light_cyan",
+    "see_cost": 1,
+    "flags": [ "NO_ROTATE", "LAKE" ]
+  },
+  {
+    "type": "overmap_special",
+    "id": "dimension_waterworld_portal",
+    "overmaps": [ { "point": [ 0, 0, -5 ], "overmap": "dimension_waterworld_portal_bed", "locations": [ "lake_bed" ] } ],
+    "locations": [ "lake_surface" ],
+    "occurrences": [ 0, 12 ],
+    "flags": [ "LAKE" ]
+  },
+  {
+    "type": "mapgen",
+    "method": "json",
+    "om_terrain": "dimension_waterworld_portal_bed",
+    "object": { "fill_ter": "t_lake_bed", "place_furniture": [ { "furn": "f_dimension_waterworld_portal", "x": 12, "y": 12 } ] }
+  }
+]

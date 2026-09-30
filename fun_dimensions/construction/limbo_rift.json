@@ -1,0 +1,43 @@
+[
+  {
+    "type": "construction",
+    "id": "constr_limbo_rift",
+    "group": "build_limbo_rift",
+    "category": "FURN",
+    "required_skills": [ [ "electronics", 5 ], [ "fabrication", 8 ] ],
+    "time": "8 h",
+    "components": [
+      [ [ "dimensional_anchor", 1 ] ],
+      [ [ "processor", 2 ] ],
+      [ [ "circuit", 8 ] ],
+      [ [ "steel_chunk", 12 ] ],
+      [ [ "scrap_copper", 10 ] ]
+    ],
+    "tools": [ [ [ "limbo_rift_schematic", -1 ] ] ],
+    "qualities": [ [ { "id": "HAMMER", "level": 2 } ], [ { "id": "SCREW", "level": 2 } ], [ { "id": "WELD", "level": 2 } ] ],
+    "pre_special": "check_empty",
+    "post_furniture": "f_limbo_rift"
+  },
+  {
+    "type": "construction",
+    "id": "constr_dismantle_limbo_rift",
+    "group": "dismantle_limbo_rift",
+    "category": "FURN",
+    "required_skills": [ [ "electronics", 5 ], [ "fabrication", 4 ] ],
+    "time": "60 m",
+    "pre_furniture": "f_limbo_rift",
+    "byproducts": [ { "item": "limbo_rift_schematic", "count": 1 } ],
+    "post_furniture": "f_null"
+  },
+  {
+    "type": "construction",
+    "id": "constr_dismantle_limbo_return_portal",
+    "group": "dismantle_limbo_rift",
+    "category": "FURN",
+    "required_skills": [ [ "electronics", 5 ], [ "fabrication", 4 ] ],
+    "time": "60 m",
+    "pre_furniture": "f_limbo_overworld_portal",
+    "byproducts": [ { "item": "limbo_rift_schematic", "count": 1 } ],
+    "post_furniture": "f_null"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "type": "world_type",
+    "id": "test_dimension",
+    "name": { "str": "Limbo" },
+    "description": { "str": "An empty expanse of limbo for contemplation." },
+    "region_settings": "limbo",
+    "generate_overmap": false,
+    "infinite_bounds": true,
+    "save_prefix": "test_dimension_",
+    "allow_npc_travel": true,
+    "allow_vehicle_travel": true,
+    "scale_num": 1,
+    "scale_den": 1
+  },
+  {
+    "type": "world_type",
+    "id": "megacity",
+    "name": { "str": "Megacity" },
+    "description": { "str": "A sprawling urban dimension of crowded apartment blocks, shops, and tangled streets." },
+    "region_settings": "megacity",
+    "infinite_bounds": true,
+    "save_prefix": "megacity_",
+    "allow_npc_travel": true,
+    "allow_vehicle_travel": true,
+    "scale_num": 1,
+    "scale_den": 1
+  },
+  {
+    "type": "world_type",
+    "id": "waterworld_islands",
+    "name": { "str": "Waterworld" },
+    "description": { "str": "An endless expanse of water dotted with inhabited islands, their cities clustered around sheltered marinas." },
+    "region_settings": "waterworld",
+    "infinite_bounds": true,
+    "save_prefix": "waterworld_islands_",
+    "allow_npc_travel": true,
+    "allow_vehicle_travel": true,
+    "scale_num": 1,
+    "scale_den": 1
+  }
+]
