@@ -16,5 +16,5 @@ An example dimension mod that adds megacity, waterworld, and limbo dimensions to
 <img width="1852" height="1006" alt="image" src="https://github.com/user-attachments/assets/551b0f79-2b9d-4f6d-ba8c-1ffe252faca8" />
 <details> 
   <summary>SPOILER: HOW TO ACCESS LIMBO</summary>
-  Limbo can be accessed by crafting a limbo rift, which can be used akin to the nether in minecraft (it will create a rift on each dimension that link together) or as a storage area.
+  Limbo can be accessed by constructing a limbo rift, which can be used akin to the nether in minecraft (it will create a rift on each dimension that link together) or as a storage area. Portals can also randomly spawn naturally in the world, which can be deconstructed to build another.
 </details>
