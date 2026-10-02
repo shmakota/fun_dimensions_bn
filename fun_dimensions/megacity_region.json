@@ -156,37 +156,7 @@
         "f_region_water_plant": { "f_cattails": 6, "f_lilypad": 3, "f_lotus": 3 }
       }
     },
-    "weather": {
-      "spring_temp": 8,
-      "summer_temp": 16,
-      "autumn_temp": 7,
-      "winter_temp": -14,
-      "base_humidity": 70,
-      "summer_humidity_manual_mod": -17,
-      "winter_humidity_manual_mod": 17,
-      "base_pressure": 1016,
-      "base_acid": 0,
-      "base_wind": 10,
-      "base_wind_distrib_peaks": 100,
-      "base_wind_season_variation": 30,
-      "weather_types": [
-        "clear",
-        "sunny",
-        "cloudy",
-        "light_drizzle",
-        "drizzle",
-        "rain",
-        "heavy_rain",
-        "thunder",
-        "lightning",
-        "acid_drizzle",
-        "acid_rain",
-        "light_flurries",
-        "flurries",
-        "snowing",
-        "snowstorm"
-      ]
-    },
+    "base_weather": "default",
     "id": "megacity",
     "river_scale": 0.0,
     "field_coverage": { "percent_coverage": 0.0, "default_ter": "t_grass", "other": {  }, "boost_chance": 0.0 },

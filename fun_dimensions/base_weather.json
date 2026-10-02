@@ -1,0 +1,14 @@
+[
+  {
+    "type": "base_weather",
+    "id": "fun_dimensions_limbo",
+    "spring_temp": 20,
+    "summer_temp": 20,
+    "autumn_temp": 20,
+    "winter_temp": 20,
+    "base_humidity": 50,
+    "base_pressure": 1015,
+    "base_wind": 0,
+    "weather_types": [ "clear" ]
+  }
+]

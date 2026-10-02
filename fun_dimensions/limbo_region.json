@@ -37,16 +37,7 @@
     "river_scale": 0.0,
     "default_groundcover": [ [ "t_limbo", 1 ] ],
     "field_coverage": { "percent_coverage": 0.0, "default_ter": "t_limbo", "other": {  }, "boost_chance": 0.0 },
-    "weather": {
-      "spring_temp": "20 C",
-      "summer_temp": "20 C",
-      "autumn_temp": "20 C",
-      "winter_temp": "20 C",
-      "base_humidity": 50.0,
-      "base_pressure": 1015.0,
-      "base_wind": 0.0,
-      "weather_types": [ "clear" ]
-    },
+    "base_weather": "fun_dimensions_limbo",
     "effects": [  ]
   }
 ]

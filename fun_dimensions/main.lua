@@ -24,9 +24,15 @@ end
 
 ---@param world string
 local function cross_dimension(world)
-  -- A single-action item delegates dimension switching to the existing travel actor.
-  local passage = gapi.create_item(ItypeId.new("dimension_maintenance_" .. world), 1)
-  passage:invoke_at(gapi.get_avatar():bub_pos())
+  local dimension_id = world == "default" and "" or world
+  local position = gapi.get_avatar():abs_pos()
+  ---@type { dimension_id: string, target_ms: TripointAbsMs, world_type?: string }
+  local options = {
+    dimension_id = dimension_id,
+    target_ms = TripointAbsMs.new(position.x, position.y, 0),
+  }
+  if dimension_id ~= "" then options.world_type = world end
+  return gapi.place_player_dimension_at(options)
 end
 
 ---@param params { user: Character, pos: TripointBubMs }
@@ -66,8 +72,7 @@ end
 
 ---@param world string
 ---@param origin TripointAbsOmt
----@param links table<string, MaintenanceEndpoint>
-local function find_exit(world, origin, links)
+local function find_exit(world, origin)
   local search = OmtFindParams.new()
   search:add_type("urban_subway", OtMatchType.PREFIX)
   search:set_search_range(0, 180)
@@ -78,6 +83,7 @@ local function find_exit(world, origin, links)
   local no_trap = TrapId.new("tr_null"):int_id()
   local floor = TerId.new("t_floor"):int_id()
   local expected_furniture = manhole_id(world)
+  local fallback
 
   for _, omt in ipairs(overmapbuffer.find_all(origin, search)) do
     gapi.place_player_overmap_at(omt)
@@ -86,24 +92,24 @@ local function find_exit(world, origin, links)
       for x = 0, 23 do
         local point = endpoint(world, TripointAbsMs.new(omt.x * 24 + x, omt.y * 24 + y, omt.z))
         local pos = gapi.abs_to_bub(absolute(point))
-        if links[key(point)] == nil and map:get_furn_at(pos) == expected_furniture and
-          map:get_trap_at(pos) == no_trap and map:get_ter_at(pos) == floor then
+        if map:get_trap_at(pos) == no_trap and map:get_ter_at(pos) == floor then
           local occupant = gapi.get_creature_at(pos)
-          if occupant == nil or occupant:is_avatar() then return point end
+          if occupant == nil or occupant:is_avatar() then
+            if map:get_furn_at(pos) == expected_furniture then return point end
+            fallback = fallback or point
+          end
         end
       end
     end
   end
-  return nil
-end
 
----@param point MaintenanceEndpoint
-local function has_exit(point)
-  local pos = gapi.abs_to_bub(absolute(point))
-  local map = gapi.get_map()
-  return overmapbuffer.check_ot("urban_subway", OtMatchType.PREFIX, absolute(point):to_omt()) and
-         map:get_furn_at(pos) == manhole_id(point.world) and
-         map:get_ter_at(pos) == TerId.new("t_floor"):int_id()
+  if fallback then
+    relocate(fallback)
+    local pos = gapi.abs_to_bub(absolute(fallback))
+    gapi.get_map():set_furn_at(pos, expected_furniture)
+    return fallback
+  end
+  return nil
 end
 
 ---@param params { user: Character, pos: TripointBubMs }
@@ -124,40 +130,39 @@ mod.examine_maintenance = function(params)
   prompt:message(locale.gettext("Lift the maintenance cover and descend the ladder?"))
   if prompt:query_yn() ~= "YES" then return end
 
-  local source = endpoint(source_world, gapi.bub_to_abs(params.pos))
-  local start = endpoint(source_world, params.user:abs_pos())
   local target_world = source_world == "default" and "megacity" or "default"
   -- Read storage at use time: loading a save can replace its table.
   local storage = game.mod_storage[mod_id]
-  storage.maintenance_links = storage.maintenance_links or {}
-  local links = storage.maintenance_links
-  local destination = links[key(source)]
-
-  local ok = pcall(function()
-    cross_dimension(target_world)
-    if destination then
-      relocate(destination)
-      if not has_exit(destination) then
-        links[key(destination)] = nil
-        destination = nil
-      end
+  local home = storage.maintenance_home
+  if home and storage.maintenance_target_world == source_world then
+    if not cross_dimension(home.world) then
+      gapi.add_msg(locale.gettext("The passage refuses to open.  You remain where you are."))
+      return
     end
-    if destination == nil then
-      destination = find_exit(target_world, params.user:abs_pos():to_omt(), links)
-      if destination == nil then return false end
-      relocate(destination)
-    end
-  end)
+    relocate(home)
+    storage.maintenance_home = nil
+    storage.maintenance_target_world = nil
+    gapi.add_msg(locale.gettext("You climb back to the maintenance cover you entered through."))
+    return
+  end
 
-  if not ok or destination == nil then
+  local start = endpoint(source_world, gapi.bub_to_abs(params.pos))
+  if not cross_dimension(target_world) then
+    gapi.add_msg(locale.gettext("The passage refuses to open.  You remain where you are."))
+    return
+  end
+
+  local destination = find_exit(target_world, params.user:abs_pos():to_omt())
+  if destination == nil then
     cross_dimension(source_world)
     relocate(start)
     gapi.add_msg(locale.gettext("The passage doubles back.  You climb out where you started."))
     return
   end
 
-  links[key(source)] = destination
-  links[key(destination)] = source
+  relocate(destination)
+  storage.maintenance_home = start
+  storage.maintenance_target_world = target_world
   gapi.add_msg(locale.gettext("You emerge into a maintenance room.  The station beyond sounds different."))
 end
 
