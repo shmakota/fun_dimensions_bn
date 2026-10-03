@@ -1,0 +1,19 @@
+[
+  {
+    "type": "weather_type",
+    "id": "fun_dimensions_indescribable_fog",
+    "name": "Indescribable Fog",
+    "color": "c_dark_gray_white",
+    "map_color": "c_dark_gray_white",
+    "glyph": " ",
+    "ranged_penalty": 0,
+    "sight_penalty": 1,
+    "light_modifier": 0,
+    "sound_attn": 0,
+    "dangerous": false,
+    "precip": "none",
+    "rains": false,
+    "acidic": false,
+    "sun_intensity": "normal"
+  }
+]
